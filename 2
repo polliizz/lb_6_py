@@ -1,0 +1,22 @@
+import random
+def main():
+    code = random.randint(100, 200) 
+    attempts = 3 
+    print("Потрібно зламати сейф. Введіть код")
+    while attempts > 0:
+        try:
+            guess = input("Код: ")
+            guess = int(guess)  
+            if guess == code:
+                print("Ви зламали сейф")
+                return 
+            elif guess < code:
+                print("Більше")
+            else:
+                print("Менший")
+        except ValueError:
+            print("Потрібно число")
+        attempts -= 1
+        print(f"Залишилось спроб: {attempts}")
+    print(f" Код сейфу був: {code}")
+main()
