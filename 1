@@ -1,0 +1,16 @@
+import random
+def main():
+    coins = random.randint(1, 100) 
+    print(f"Ви знайшли {coins} монет")
+    try:
+        people = input("Скільки людей у команді? ")
+        people = int(people)  
+        result = coins // people
+        print(f"Кожен отримує {result} монет")
+    except ValueError:
+        print("Потрібно ввести число")
+    except ZeroDivisionError:
+        print("Не можна ділити на нуль")
+    finally:
+        print("Далі")
+main()
